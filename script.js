@@ -60,7 +60,7 @@ document.addEventListener("keydown", function (event) {
 
 //measuring system-connected to google sheet//
 function sendReadEvent(imageName) {
-  fetch("https://script.google.com/macros/s/AKfycbwoqQnH_l_qYASwfwwPzIhFs9eI03wUpwV-pSCvFEXu-wnJhOT8Rr3Jr5kHyRJhrhkp/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwixRa-S91N80zrgppqcMmHU2ugc39fjbapEtSgudq34uoUQ5Llyajpjgr48tQXEn9Y/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
