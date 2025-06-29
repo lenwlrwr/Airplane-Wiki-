@@ -60,14 +60,12 @@ document.addEventListener("keydown", function (event) {
 
 //measuring system-connected to google sheet//
 function sendReadEvent(imageName) {
-  fetch("https://script.google.com/macros/s/AKfycbzpTmEg_Z5LDTMGlSnS6P8p_Q3KjjyOU7-dgqI9p7KAbXcGic0W3sROhLObEZ-DFYdr/exec", {
+  const formData = new URLSearchParams();
+  formData.append("image", imageName);
+
+  fetch("https://script.google.com/macros/s/AKfycbx50We29OX7wqeMsx218nbmC8vl6RC6UMUaZqFu2EXGP-EDvNJGfr7xu0ykJGBYLmg3/exec", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      image: imageName
-    })
+    body: formData
   })
   .then(response => response.text())
   .then(result => console.log("Logged to Google Sheet:", result))
