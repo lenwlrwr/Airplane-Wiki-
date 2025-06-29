@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Airplane Wiki</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h2><img src="images/logo.png" alt="logo" class="logo">
+  Airplane Wiki
+</h2>
+<input type="text" id="searchInput" placeholder="Search..." onkeyup="searchItems()">
+<button id="createbutton">Add an aircraft</button>
+
+<!--delete this after-->
+<div id="timerDisplay" style="font-size: 18px; margin: 10px 0; color: #333;">
+  Elapsed time: 0 seconds
+</div>
+
+  <!--this is the place to edit-->
+<div class="airplane-container">
+    <button class="airplane-btn" onclick="openPopup('images/DV-A320-100.png')"> <!--Detail version-->  
+    <img src="images/SV-A320-100.png" alt="A320"/> <!--Simplify version--> 
+    </button>
+</div>
+
+  
+  
+  
+<div id="imageModal" class="modal" onclick="closePopup()">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="popupImg" src="" alt="Popup Image" />
+</div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
