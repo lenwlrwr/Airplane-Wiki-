@@ -96,17 +96,14 @@
   
   /* Align all header elements in center of page */
   
-  #searchInput {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
+#searchInput {
+    margin-top: -94.7px; /* Push search bar down */
+    text-align: center;
+  }
 #createbutton {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  text-align: center;
-}
+    margin-top: -94.7px; /* Push search bar down */
+    text-align: center;
+  }
 
 body {
     text-align: center;
