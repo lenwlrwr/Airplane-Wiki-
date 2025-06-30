@@ -127,9 +127,9 @@ body {
 }
 
 #linkbutton {
-  float: right;
-  margin-top: -94.7px;
-  margin-right: 20px;
+  position: absolute;
+  top: 25px;           /* Adjust this until it aligns with the search bar */
+  right: 30px;
   padding: 10px 15px;
   font-size: 16px;
   background-color: #f57c00;
@@ -139,12 +139,12 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-
 #linkbutton:hover {
   background-color: #e65100;
 }
-
-
+body {
+  position: relative;
+}
 
   
   
