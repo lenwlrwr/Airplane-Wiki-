@@ -128,7 +128,7 @@ body {
 
 #linkbutton {
   position: absolute;
-  top: 25px;           /* Adjust this until it aligns with the search bar */
+  top: 24px;           /* Adjust this until it aligns with the search bar */
   right: 30px;
   padding: 10px 15px;
   font-size: 16px;
