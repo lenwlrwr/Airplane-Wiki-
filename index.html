@@ -28,7 +28,7 @@
 <!--this is the place to edit-->
 <div class="airplane-container">
   <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-       <button onclick="openPopup('images/DV-ATL-98.png')">
+       <button onclick="openPopup('images/DV-ATL-98-1.png')">
             <img src="images/SV-ATL-98.png" alt="ATL-98 Carvair"/> 
        </button>
       <div class="credit-line">Submitted by: jack*gmail.com</div>
@@ -41,6 +41,8 @@
   <div id="imageModal" class="modal" onclick="closePopup()">
     <span class="close-btn">&times;</span>
     <img class="modal-content" id="popupImg" src="" alt="Popup Image" />
+    <button class="arrow left-arrow" onclick="event.stopPropagation(); changeImage(-1)">&#10094;</button>
+    <button class="arrow right-arrow" onclick="event.stopPropagation(); changeImage(1)">&#10095;</button>
 </div>
 <script src="script.js"></script>
 <footer style="text-align: center; margin-top: 40px; font-size: 14px; color: #666;">
