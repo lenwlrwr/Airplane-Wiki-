@@ -3,6 +3,8 @@ let hasCountedAsRead = false;
 let currentImage = ""; // store which image was opened
 let timerInterval;
 let startTime;
+let currentImageIndex = 0;
+let currentImageSet = [];
 
 //Search function//
 function searchItems() {
@@ -24,12 +26,20 @@ document.getElementById("createbutton").addEventListener("click", function()
 //Open detail version  function//
 function openPopup(imagePath) {
   const modal = document.getElementById("imageModal");
-  const popupImg = document.getElementById("popupImg");
-  popupImg.src = imagePath;
+
+  // Extract base name like DV-A320 from DV-A320-1.png
+  const baseName = imagePath.split("/").pop().split(".")[0].split("-")[0]; 
+  currentImageSet = [
+    `images/${baseName}-1.png`,
+    `images/${baseName}-2.png`,
+    `images/${baseName}-3.png`
+  ];
+  currentImageIndex = 0;
+
+  showPopupImage(); // set the initial image
   modal.style.display = "block";
 
-  // Store current image name
-  currentImage = imagePath.split("/").pop();
+  currentImage = currentImageSet[currentImageIndex].split("/").pop();
   hasCountedAsRead = false;
 
   startTime = Date.now();
@@ -38,13 +48,23 @@ function openPopup(imagePath) {
     const elapsed = Math.floor((Date.now() - startTime) / 1000);
     document.getElementById("timerDisplay").textContent = `Elapsed time: ${elapsed} seconds`;
 
-    // Send only once when read threshold reached
     if (!hasCountedAsRead && elapsed >= READ_THRESHOLD) {
       hasCountedAsRead = true;
       sendReadEvent(currentImage);
     }
   }, 1000);
 }
+function showPopupImage() {
+  const popupImg = document.getElementById("popupImg");
+  popupImg.src = currentImageSet[currentImageIndex];
+}
+function changeImage(direction) {
+  currentImageIndex += direction;
+  if (currentImageIndex < 0) currentImageIndex = currentImageSet.length - 1;
+  if (currentImageIndex >= currentImageSet.length) currentImageIndex = 0;
+  showPopupImage();
+}
+
 
 //close detail version function(Optional + Nessary)//
 function closePopup() {
