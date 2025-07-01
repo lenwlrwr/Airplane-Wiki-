@@ -164,6 +164,31 @@ body {
   color: #555;
   margin-top: 4px;
 }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 50%;
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+.arrow:hover {
+  background-color: rgba(255,255,255,0.9);
+}
+
 
 
 
