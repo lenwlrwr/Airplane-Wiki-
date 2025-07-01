@@ -27,16 +27,18 @@
 
 <!--this is the place to edit-->
 <div class="airplane-container">
-    <button class="airplane-btn" onclick="openPopup('images/DV-A320-100.png')"> <!--Detail version-->  
-    <img src="images/SV-A320-100.png" alt="A320-100"/> <!--Simplify version--> 
-    </button>
-    <div class="credit-line">Submitted by: jacksonthe*gmail.com</div> <!-- Add credit here -->
+  <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
+       <button onclick="openPopup('images/DV-A320-100.png')">
+            <img src="images/SV-A320-100.png" alt="A320-100"/> 
+       </button>
+      <div class="credit-line">Submitted by: jacksonthe*gmail.com</div>
+  </div>
 </div>
+
 
   
   
-  
-<div id="imageModal" class="modal" onclick="closePopup()">
+  <div id="imageModal" class="modal" onclick="closePopup()">
     <span class="close-btn">&times;</span>
     <img class="modal-content" id="popupImg" src="" alt="Popup Image" />
 </div>
