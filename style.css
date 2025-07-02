@@ -13,10 +13,13 @@
   }
   
   .airplane-btn img {
-    width: 150px;
-    border-radius: 8px;
-    transition: transform 0.2s;
-  }
+  width: 150px;
+  height: 100px; /* or any consistent height you want */
+  object-fit: cover; /* ensures the image fills the box nicely */
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
   
   .airplane-btn img:hover {
     transform: scale(1.05);
