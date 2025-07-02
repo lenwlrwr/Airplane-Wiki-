@@ -28,7 +28,8 @@ function openPopup(imagePath) {
   const modal = document.getElementById("imageModal");
 
   // Extract base name like DV-A320 from DV-A320-1.png
-  const baseName = imagePath.split("/").pop().split(".")[0].split("-")[0]; 
+  const fullName = imagePath.split("/").pop().split(".")[0]; // e.g. "DV-A320-1"
+  const baseName = fullName.substring(0, fullName.lastIndexOf("-")); // removes last "-1"
   currentImageSet = [
     `images/${baseName}-1.png`,
     `images/${baseName}-2.png`,
