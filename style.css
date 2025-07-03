@@ -228,6 +228,10 @@ body {
   margin-bottom: 5px;
   text-align: center;
 }
+.airplane-title:hover {
+  text-decoration: underline;
+}
+
 
 
 
