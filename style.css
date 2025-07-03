@@ -16,7 +16,7 @@
 
  .airplane-btn img {
   width: 100%; /* take full width of button */
-  max-width: 200px; /* increase image size */
+  max-width: 300px; /* increase image size */
   border-radius: 8px;
   transition: transform 0.2s;
 }
