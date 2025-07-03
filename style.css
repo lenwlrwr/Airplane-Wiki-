@@ -195,16 +195,18 @@ body {
 
 @media (max-width: 600px) {
   .airplane-btn img {
-    max-width: 100%; /* allow full width on small screens */
+    width: 100%;
+    max-width: 90vw; /* make image up to 90% of screen width */
   }
 
   .airplane-container {
     justify-content: center;
   }
 
-  #searchInput, #createbutton {
+  #searchInput,
+  #createbutton {
     width: 90%;
-    margin: 10px 0;
+    margin: 10px auto;
   }
 
   h2 {
