@@ -82,10 +82,32 @@ document.addEventListener("keydown", function (event) {
 //Aircraft button title MORE//
 document.querySelectorAll(".airplane-title").forEach(titleDiv => {
   const fullTitle = titleDiv.dataset.title;
-  const words = fullTitle.trim().split(/\s+/);
-  if (words.length > 3) {
-    titleDiv.textContent = words.slice(0, 3).join(" ") + "… more";
-    titleDiv.title = fullTitle; // tooltip on hover
+
+  // Helper: Remove emoji when counting words
+  const nonEmojiWords = fullTitle
+    .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, '')
+    .trim()
+    .split(/\s+/);
+
+  const fullWords = fullTitle.trim().split(/\s+/);
+
+  // Only shorten if more than 3 real words
+  if (nonEmojiWords.length > 3) {
+    const shortText = fullWords.slice(0, 3).join(" ") + "… more";
+    titleDiv.textContent = shortText;
+    titleDiv.title = fullTitle;
+
+    // Toggle full/short on click
+    let isExpanded = false;
+    titleDiv.style.cursor = "pointer";
+    titleDiv.addEventListener("click", () => {
+      if (isExpanded) {
+        titleDiv.textContent = shortText;
+      } else {
+        titleDiv.textContent = fullTitle;
+      }
+      isExpanded = !isExpanded;
+    });
   } else {
     titleDiv.textContent = fullTitle;
   }
