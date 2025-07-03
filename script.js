@@ -79,6 +79,19 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+//Aircraft button title MORE//
+document.querySelectorAll(".airplane-title").forEach(titleDiv => {
+  const fullTitle = titleDiv.dataset.title;
+  const words = fullTitle.trim().split(/\s+/);
+  if (words.length > 3) {
+    titleDiv.textContent = words.slice(0, 3).join(" ") + "… more";
+    titleDiv.title = fullTitle; // tooltip on hover
+  } else {
+    titleDiv.textContent = fullTitle;
+  }
+});
+
+
 //measuring system-connected to google sheet//
 function sendReadEvent(imageName) {
   const formData = new URLSearchParams();
