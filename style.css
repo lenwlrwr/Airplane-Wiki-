@@ -6,21 +6,23 @@
     margin-top: 20px;
   }
   
-  .airplane-btn {
-    border: none;
-    background: none;
-    cursor: pointer;
-  }
-  
-  .airplane-btn img {
-  width: 150px;
+ .airplane-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+}
+
+ .airplane-btn img {
+  width: 100%; /* take full width of button */
+  max-width: 200px; /* increase image size */
   border-radius: 8px;
   transition: transform 0.2s;
 }
 
 
-  
-  .airplane-btn img:hover {
+.airplane-btn img:hover {
     transform: scale(1.05);
   }
   
@@ -190,6 +192,30 @@ body {
 .arrow:hover {
   background-color: rgba(255,255,255,0.9);
 }
+
+@media (max-width: 600px) {
+  .airplane-btn img {
+    max-width: 100%; /* allow full width on small screens */
+  }
+
+  .airplane-container {
+    justify-content: center;
+  }
+
+  #searchInput, #createbutton {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .logo {
+    height: 30px;
+  }
+}
+
 
 
 
