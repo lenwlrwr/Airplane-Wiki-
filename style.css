@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
+    justify-content: center; /* Add this line to center the items */
   }
   
  .airplane-btn {
