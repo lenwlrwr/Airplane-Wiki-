@@ -195,14 +195,16 @@ body {
   background-color: rgba(255,255,255,0.9);
 }
 
+
 @media (max-width: 600px) {
-  .airplane-btn img {
-    width: 100%;
-    max-width: 100vw; /* make image up to 90% of screen width */
+  .airplane-container {
+    grid-template-columns: 1fr; /* ✅ Mobile: 1 card per row */
+    justify-content: center;
   }
 
-  .airplane-container {
-    justify-content: center;
+  .airplane-btn img {
+    width: 100%;
+    max-width: 100vw; /* ✅ full width image, nice padding */
   }
 
   #searchInput,
@@ -219,6 +221,10 @@ body {
     height: 30px;
   }
 }
+
+
+
+
 .airplane-title {
   font-size: 16px;
   font-weight: bold;
