@@ -1,14 +1,14 @@
 
 .airplane-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* fits up to 4 nicely */
+  grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
   gap: 15px;
   margin-top: 20px;
-  justify-items: center; /* center each card inside its cell */
+  justify-items: center; /* centers each card inside the cell */
 }
 
-  
- .airplane-btn {
+
+.airplane-btn {
   border: none;
   background: none;
   cursor: pointer;
