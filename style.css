@@ -1,11 +1,12 @@
 
 .airplane-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-    justify-content: center; /* Add this line to center the items */
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* fits up to 4 nicely */
+  gap: 15px;
+  margin-top: 20px;
+  justify-items: center; /* center each card inside its cell */
+}
+
   
  .airplane-btn {
   border: none;
