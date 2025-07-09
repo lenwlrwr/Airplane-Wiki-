@@ -144,4 +144,22 @@ function sendReadEvent(imageName) {
   .then(result => console.log("Logged to Google Sheet:", result))
   .catch(error => console.error("Error logging read:", error));
 }
+window.addEventListener("load", function () {
+  const popup = document.getElementById("aircraftPopup");
+  const dontShow = localStorage.getItem("hideAircraftPopup");
+
+  if (!dontShow) {
+    popup.style.display = "flex";
+  }
+
+  document.getElementById("popupAddBtn").addEventListener("click", function () {
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdEH1qy_pc5pxsrf0KdijS4Rx9Q3bvTB_ue_qMo5y2jUKa-mQ/viewform", "_blank");
+  });
+
+  document.getElementById("popupCloseBtn").addEventListener("click", function () {
+    localStorage.setItem("hideAircraftPopup", "true");
+    popup.style.display = "none";
+  });
+});
+
 
