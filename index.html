@@ -102,12 +102,23 @@
 
   
   
-  <div id="imageModal" class="modal" onclick="closePopup()">
+<div id="imageModal" class="modal" onclick="closePopup()">
     <span class="close-btn">&times;</span>
     <img class="modal-content" id="popupImg" src="" alt="Popup Image" />
     <button class="arrow left-arrow" onclick="event.stopPropagation(); changeImage(-1)">&#10094;</button>
     <button class="arrow right-arrow" onclick="event.stopPropagation(); changeImage(1)">&#10095;</button>
 </div>
+
+<div id="aircraftPopup" class="popup-overlay">
+  <div class="popup-box">
+    <p>✈️ Do you know the aircraft that no one knows about? Know about the weirdest aircraft?</p>
+    <div class="popup-buttons">
+      <button id="popupAddBtn">Add an aircraft</button>
+      <button id="popupCloseBtn">Don't show this again</button>
+    </div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 <footer style="text-align: center; margin-top: 40px; font-size: 14px; color: #666;">
   © 2025 Airplane Wiki. All rights reserved.
