@@ -113,6 +113,23 @@ document.querySelectorAll(".airplane-title").forEach(titleDiv => {
   }
 });
 
+// Lazy-load thumbnail images only
+document.addEventListener("DOMContentLoaded", function () {
+  const lazyImages = document.querySelectorAll(".lazy-img");
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.getAttribute("data-src");
+        img.removeAttribute("data-src");
+        obs.unobserve(img);
+      }
+    });
+  });
+
+  lazyImages.forEach(img => observer.observe(img));
+});
 
 //measuring system-connected to google sheet//
 function sendReadEvent(imageName) {
@@ -127,3 +144,4 @@ function sendReadEvent(imageName) {
   .then(result => console.log("Logged to Google Sheet:", result))
   .catch(error => console.error("Error logging read:", error));
 }
+
