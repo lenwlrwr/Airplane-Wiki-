@@ -239,6 +239,45 @@ body {
 .airplane-title:hover {
   text-decoration: underline;
 }
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: white;
+  padding: 25px;
+  max-width: 400px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.popup-buttons button {
+  margin: 10px 5px 0 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#popupAddBtn {
+  background-color: #4285f4;
+  color: white;
+}
+
+#popupCloseBtn {
+  background-color: #ccc;
+}
 
 
 
