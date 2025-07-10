@@ -1,4 +1,5 @@
 const READ_THRESHOLD = 10; // seconds
+const loadStartTime = performance.now(); // move this OUTSIDE window.load
 let hasCountedAsRead = false;
 let currentImage = ""; // store which image was opened
 let timerInterval;
@@ -171,15 +172,14 @@ fetch("https://script.google.com/macros/s/AKfycbwsHUoHPo-FHGLYM5qzzfMwXzmNqWjWpA
 
 // ✅ Log Load Time After All Images
 window.addEventListener("load", () => {
-const loadStartTime = performance.now(); // move this OUTSIDE window.load
-  const images = Array.from(document.images).filter(img => img.src && !img.id.includes("popupImg"));
-  let loaded = 0;
-  const total = images.length;
+const images = Array.from(document.images).filter(img => img.src && !img.id.includes("popupImg"));
+let loaded = 0;
+const total = images.length;
 
   function check() {
     loaded++;
     if (loaded === total) {
-      const loadTime = Math.round(performance.now() - start);
+      const loadTime = Math.round(performance.now() - loadStartTime);
       console.log("✅ All images loaded in:", loadTime, "ms");
 
       fetch("https://script.google.com/macros/s/AKfycbwsHUoHPo-FHGLYM5qzzfMwXzmNqWjWpAyieJCfrq6QP4J4DY7oH5wXiZ71nqNAL95DCw/exec?loadTime=" + loadTime, {
