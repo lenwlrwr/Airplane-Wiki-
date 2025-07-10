@@ -203,7 +203,7 @@ function report(time) {
 }
 
 function logVisit() {
-  fetch("YOUR_GOOGLE_SCRIPT_URL", {
+  fetch("https://script.google.com/macros/s/AKfycbwJYFumW9nad9U3ZW7evCLfVg1Yl1gk0Pz_5AePUx_tkXSLrgfLWLmlZfQOi11dMCaWLQ/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
