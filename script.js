@@ -196,21 +196,33 @@ window.addEventListener("load", () => {
 
 function report(time) {
   fetch("https://script.google.com/macros/s/AKfycbwJYFumW9nad9U3ZW7evCLfVg1Yl1gk0Pz_5AePUx_tkXSLrgfLWLmlZfQOi11dMCaWLQ/exec", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ loadTime: time })
-  });
+   method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ loadTime: time })
+})
+.then(res => res.text())
+.then(result => {
+  console.log("✅ Load time logged:", result);
+  alert("Connection Successful ✅ (Load time sent)");
+})
+.catch(err => console.error("❌ Load time error:", err));
 }
 
 function logVisit() {
   fetch("https://script.google.com/macros/s/AKfycbwJYFumW9nad9U3ZW7evCLfVg1Yl1gk0Pz_5AePUx_tkXSLrgfLWLmlZfQOi11dMCaWLQ/exec", {
-    method: "POST",
+    method: "POST",  // ✅ Required
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      visit: true,
-      userAgent: navigator.userAgent
-    })
-  });
+    visit: true,
+    userAgent: navigator.userAgent
+  })
+})
+.then(res => res.text())
+.then(result => {
+  console.log("✅ Visit logged:", result);
+  alert("Connection Successful ✅ (Visit logged)");
+})
+.catch(err => console.error("❌ Visit log error:", err));
 }
 
 
