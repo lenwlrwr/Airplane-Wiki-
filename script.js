@@ -162,6 +162,14 @@ window.addEventListener("load", function () {
   });
 });
 
+// ✅ Log Visit (no CORS issue)
+fetch("https://script.google.com/macros/s/AKfycbyCIoYg89S_rZnD2DQk-hwPg8tsIzB0TsNfJvd7dVZIATXC97xnCTLIxCN4SfgsLg-m1w/exec?visit=" 
+  + encodeURIComponent(navigator.userAgent), {
+  method: "POST",
+  mode: "no-cors"
+});
+
+// ✅ Log Load Time After All Images
 window.addEventListener("load", () => {
   const start = performance.now();
   const images = document.images;
@@ -174,10 +182,9 @@ window.addEventListener("load", () => {
       const loadTime = Math.round(performance.now() - start);
       console.log("✅ All images loaded in:", loadTime, "ms");
 
-      fetch("https://script.google.com/macros/s/AKfycbyCIoYg89S_rZnD2DQk-hwPg8tsIzB0TsNfJvd7dVZIATXC97xnCTLIxCN4SfgsLg-m1w/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbyCIoYg89S_rZnD2DQk-hwPg8tsIzB0TsNfJvd7dVZIATXC97xnCTLIxCN4SfgsLg-m1w/exec?loadTime=" + loadTime, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ loadTime: loadTime })
+        mode: "no-cors"
       }).then(() => {
         console.log("✅ Load time sent to Google Sheet");
       }).catch(err => {
@@ -186,7 +193,7 @@ window.addEventListener("load", () => {
     }
   }
 
-  if (total === 0) check();  // Handle no images
+  if (total === 0) check();
 
   for (let img of images) {
     if (img.complete && img.naturalHeight !== 0) {
