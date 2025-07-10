@@ -172,7 +172,7 @@ fetch("https://script.google.com/macros/s/AKfycbyCIoYg89S_rZnD2DQk-hwPg8tsIzB0Ts
 // ✅ Log Load Time After All Images
 window.addEventListener("load", () => {
   const start = performance.now();
-  const images = document.images;
+  const images = Array.from(document.images).filter(img => img.src && !img.id.includes("popupImg"));
   let loaded = 0;
   const total = images.length;
 
