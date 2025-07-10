@@ -210,19 +210,19 @@ function report(time) {
 
 function logVisit() {
   fetch("https://script.google.com/macros/s/AKfycbwJYFumW9nad9U3ZW7evCLfVg1Yl1gk0Pz_5AePUx_tkXSLrgfLWLmlZfQOi11dMCaWLQ/exec", {
-    method: "POST",  // ✅ Required
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-    visit: true,
-    userAgent: navigator.userAgent
+      visit: true,
+      userAgent: navigator.userAgent
+    })
   })
-})
-.then(res => res.text())
-.then(result => {
-  console.log("✅ Visit logged:", result);
-  alert("Connection Successful ✅ (Visit logged)");
-})
-.catch(err => console.error("❌ Visit log error:", err));
+  .then(res => res.text())
+  .then(result => {
+    console.log("✅ Visit logged:", result);
+    alert("Connection Successful ✅ (Visit logged)");
+  })
+  .catch(err => console.error("❌ Visit log error:", err));
 }
 
 
