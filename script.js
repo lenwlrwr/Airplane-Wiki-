@@ -204,3 +204,11 @@ const total = images.length;
     }
   }
 });
+
+// ✅ Log a website visit (fires once per page load)
+fetch("https://script.google.com/macros/s/AKfycbzdRefBJl8TLe0rQMnJGTIcqSsXjNIaW5avsnCi91njgtFj4evUqTsaH05lWH4XlbQvyw/exec?visit=" 
+  + encodeURIComponent(navigator.userAgent), {
+  method: "POST",
+  mode: "no-cors"
+});
+
