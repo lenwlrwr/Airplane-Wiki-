@@ -163,7 +163,7 @@ window.addEventListener("load", function () {
 });
 
 // ✅ Log Visit (no CORS issue)
-fetch("https://script.google.com/macros/s/AKfycbyCIoYg89S_rZnD2DQk-hwPg8tsIzB0TsNfJvd7dVZIATXC97xnCTLIxCN4SfgsLg-m1w/exec?visit=" 
+fetch("https://script.google.com/macros/s/AKfycbwsHUoHPo-FHGLYM5qzzfMwXzmNqWjWpAyieJCfrq6QP4J4DY7oH5wXiZ71nqNAL95DCw/exec?visit=" 
   + encodeURIComponent(navigator.userAgent), {
   method: "POST",
   mode: "no-cors"
@@ -182,7 +182,7 @@ window.addEventListener("load", () => {
       const loadTime = Math.round(performance.now() - start);
       console.log("✅ All images loaded in:", loadTime, "ms");
 
-      fetch("https://script.google.com/macros/s/AKfycbyCIoYg89S_rZnD2DQk-hwPg8tsIzB0TsNfJvd7dVZIATXC97xnCTLIxCN4SfgsLg-m1w/exec?loadTime=" + loadTime, {
+      fetch("https://script.google.com/macros/s/AKfycbwsHUoHPo-FHGLYM5qzzfMwXzmNqWjWpAyieJCfrq6QP4J4DY7oH5wXiZ71nqNAL95DCw/exec?loadTime=" + loadTime, {
         method: "POST",
         mode: "no-cors"
       }).then(() => {
