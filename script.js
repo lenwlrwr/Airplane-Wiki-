@@ -162,4 +162,56 @@ window.addEventListener("load", function () {
   });
 });
 
+window.addEventListener("load", () => {
+  const start = performance.now();
+  const images = document.images;
+  let loadedCount = 0;
+  const total = images.length;
+
+  if (total === 0) {
+    report(performance.now() - start);
+    return;
+  }
+
+  function checkDone() {
+    loadedCount++;
+    if (loadedCount === total) {
+      const fullLoadTime = Math.round(performance.now() - start);
+      report(fullLoadTime);
+    }
+  }
+
+  for (let img of images) {
+    if (img.complete && img.naturalHeight !== 0) {
+      checkDone();
+    } else {
+      img.addEventListener("load", checkDone);
+      img.addEventListener("error", checkDone);
+    }
+  }
+
+  // Also log basic visit immediately
+  logVisit();
+});
+
+function report(time) {
+  fetch("YOUR_GOOGLE_SCRIPT_URL", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ loadTime: time })
+  });
+}
+
+function logVisit() {
+  fetch("YOUR_GOOGLE_SCRIPT_URL", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      visit: true,
+      userAgent: navigator.userAgent
+    })
+  });
+}
+
+
 
