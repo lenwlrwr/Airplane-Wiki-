@@ -165,65 +165,35 @@ window.addEventListener("load", function () {
 window.addEventListener("load", () => {
   const start = performance.now();
   const images = document.images;
-  let loadedCount = 0;
+  let loaded = 0;
   const total = images.length;
 
-  if (total === 0) {
-    report(performance.now() - start);
-    return;
-  }
+  function check() {
+    loaded++;
+    if (loaded === total) {
+      const loadTime = Math.round(performance.now() - start);
+      console.log("✅ All images loaded in:", loadTime, "ms");
 
-  function checkDone() {
-    loadedCount++;
-    if (loadedCount === total) {
-      const fullLoadTime = Math.round(performance.now() - start);
-      report(fullLoadTime);
+      fetch("https://script.google.com/macros/s/AKfycbyCIoYg89S_rZnD2DQk-hwPg8tsIzB0TsNfJvd7dVZIATXC97xnCTLIxCN4SfgsLg-m1w/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ loadTime: loadTime })
+      }).then(() => {
+        console.log("✅ Load time sent to Google Sheet");
+      }).catch(err => {
+        console.error("❌ Failed to log load time:", err);
+      });
     }
   }
+
+  if (total === 0) check();  // Handle no images
 
   for (let img of images) {
     if (img.complete && img.naturalHeight !== 0) {
-      checkDone();
+      check();
     } else {
-      img.addEventListener("load", checkDone);
-      img.addEventListener("error", checkDone);
+      img.addEventListener("load", check);
+      img.addEventListener("error", check);
     }
   }
-
-  // Also log basic visit immediately
-  logVisit();
 });
-
-function report(time) {
-  fetch("https://script.google.com/macros/s/AKfycbwJYFumW9nad9U3ZW7evCLfVg1Yl1gk0Pz_5AePUx_tkXSLrgfLWLmlZfQOi11dMCaWLQ/exec", {
-   method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ loadTime: time })
-})
-.then(res => res.text())
-.then(result => {
-  console.log("✅ Load time logged:", result);
-  alert("Connection Successful ✅ (Load time sent)");
-})
-.catch(err => console.error("❌ Load time error:", err));
-}
-
-function logVisit() {
-  fetch("https://script.google.com/macros/s/AKfycbwJYFumW9nad9U3ZW7evCLfVg1Yl1gk0Pz_5AePUx_tkXSLrgfLWLmlZfQOi11dMCaWLQ/exec", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      visit: true,
-      userAgent: navigator.userAgent
-    })
-  })
-  .then(res => res.text())
-  .then(result => {
-    console.log("✅ Visit logged:", result);
-    alert("Connection Successful ✅ (Visit logged)");
-  })
-  .catch(err => console.error("❌ Visit log error:", err));
-}
-
-
-
