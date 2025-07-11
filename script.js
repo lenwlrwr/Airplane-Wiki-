@@ -1,4 +1,4 @@
-const READ_THRESHOLD = 10; // seconds
+const READ_THRESHOLD = 1; // seconds
 const loadStartTime = performance.now(); // move this OUTSIDE window.load
 let hasCountedAsRead = false;
 let currentImage = ""; // store which image was opened
