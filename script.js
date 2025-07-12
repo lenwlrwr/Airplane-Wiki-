@@ -212,3 +212,34 @@ fetch("https://script.google.com/macros/s/AKfycbzdRefBJl8TLe0rQMnJGTIcqSsXjNIaW5
   mode: "no-cors"
 });
 
+
+function handleFirstCardClick(imagePath) {
+  // Mark that the intro has been seen
+  localStorage.setItem("airplaneWikiIntroSeen", "true");
+
+  // Hide animation and hint
+  document.getElementById("firstCard").classList.remove("animate-first");
+  const hint = document.getElementById("starterHint");
+  if (hint) hint.style.display = "none";
+
+  // Open the popup
+  openPopup(imagePath);
+}
+window.addEventListener("DOMContentLoaded", () => {
+  const hasSeenIntro = localStorage.getItem("airplaneWikiIntroSeen");
+
+  const card = document.getElementById("firstCard");
+  const hint = document.getElementById("starterHint");
+
+  if (!hasSeenIntro) {
+    // First-time visitor: show animation and hint
+    if (card) card.classList.add("animate-first");
+    if (hint) hint.style.display = "block";
+  } else {
+    // Returning visitor: hide animation and hint
+    if (card) card.classList.remove("animate-first");
+    if (hint) hint.style.display = "none";
+  }
+});
+
+
