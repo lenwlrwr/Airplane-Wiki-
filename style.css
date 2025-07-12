@@ -22,6 +22,29 @@
   border-radius: 8px;
   transition: transform 0.2s;
 }
+.starter-hint {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #ff4081, #ff9800);
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 12px;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 0 20px rgba(255, 105, 135, 0.9);
+  animation: starterPop 1.2s ease-in-out infinite, floatHint 2s ease-in-out infinite;
+}
+@keyframes starterPop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes floatHint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
 
 
 .airplane-btn img:hover {
