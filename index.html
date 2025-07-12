@@ -29,12 +29,14 @@
 <!--this is the place to edit-->
 <div class="airplane-container">
   
-   <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-      <div class="airplane-title" data-title="🤯 Aircraft Without Wings?"></div>
-      <button onclick="openPopup('images/DV-24A-1.png')">
-            <img data-src="images/SV-24A.png" alt="Martin Marietta X-24A" class="lazy-img"/> 
-      </button>
-  </div>
+   <div class="airplane-btn animate-first" id="firstCard"> 
+   <div class="airplane-title" data-title="🤯 Aircraft Without Wings?"></div>
+   <button onclick="handleFirstCardClick('images/DV-24A-1.png')">
+  <img data-src="images/SV-24A.png" alt="Martin Marietta X-24A" class="lazy-img"/> 
+  </button>
+   <div class="starter-hint" id="starterHint">Click me to get started</div>
+</div>
+
 
   <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
       <div class="airplane-title" data-title="👃 Big Nose Plane?"></div>
