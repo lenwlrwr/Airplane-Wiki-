@@ -335,7 +335,7 @@
 /* On small screens like iPhones */
 @media (max-width: 500px) {
   .video-title {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 
