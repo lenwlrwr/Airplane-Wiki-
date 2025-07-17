@@ -1,20 +1,18 @@
-<!-- force rebuild -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Airplane Wiki</title>
-  <meta name="description" content="Air Wiki is a visual encyclopedia for aircraft lovers – browse airplane models, view aircraft images, and explore aviation knowledge.">
+  <meta name="description" content="Airplane Wiki is a visual encyclopedia for aircraft lovers – browse airplane models, view aircraft images, and explore aviation knowledge.">
   <meta name="keywords" content="airplanes, aircraft, airplane wiki, aviation knowledge, plane models, aircraft images">
   <meta name="google-site-verification" content="GnWpEgZhu45R42S6HPdBhV7k1WKjYw4Vb-wWPEOKQzA" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-<h1 style="color:red;">🔥 VERSION TEST: IF YOU SEE THIS, SITE IS UPDATE 🔥</h1>
 
-<h2><img src="images/favicon.png" alt="logo" class="logo">
+<h2><img src="favicon.png" alt="logo" class="logo">
   Airplane Wiki
 </h2>
 <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchItems()">
@@ -22,7 +20,7 @@
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSexj5OeiFyJd4IMcRQ1ydYG-TsjWHSm5CIjraoqQrndiBjjaw/viewform" target="_blank" id="linkbutton">Feedback</a>
 
 
-  <p>Welcome to Airplane Wiki – your visual encyclopedia for aircraft lover. Explore plane models, view aircraft images, and expand your aviation knowledge.</p>
+  <p>Welcome to Airplane Wiki – your visual encyclopedia for aircraft lovers.</p>
 
 <div id="timerDisplay" style="font-size: 18px; margin: 10px 0; color: #333;">
   Elapsed time: 0 seconds
@@ -30,90 +28,25 @@
 
 
 <!--this is the place to edit-->
-<div class="airplane-container">
-
- <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-      <div class="airplane-title" data-title="🫣 Worst plane?"></div>
-      <button onclick="openPopup('images/DV-F2A-1.png')">
-            <img data-src="images/SV-F2A.png" alt="Brewster F2A Buffalo" class="lazy-img"/> 
-      </button>
-  </div>
-
-<div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-  <iframe width="300" height="170"
-    src="https://www.youtube.com/embed/AQCrm4noaDI"
-    title="F2A Buffalo-The Worst Aircraft?"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-</div>
-  
-  <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-      <div class="airplane-title" data-title="🫣 Worst plane?"></div>
-      <button onclick="openPopup('images/DV-F2A-1.png')">
-            <img data-src="images/SV-F2A.png" alt="Brewster F2A Buffalo" class="lazy-img"/> 
-      </button>
-  </div>
-
-  <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-      <div class="airplane-title" data-title="🤨 Parasite Airplane?"></div>
-      <button onclick="openPopup('images/DV-XF85-1.png')">
-            <img data-src="images/SV-XF85.png" alt="McDonnell XF-85 Goblin" class="lazy-img"/> 
-      </button>
-  </div>
-
-   <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-      <div class="airplane-title" data-title="🤩 Bomber with Tank Treads?"></div>
-      <button onclick="openPopup('images/DV-B-36-1.png')">
-            <img data-src="images/SV-B-36.png" alt="Convair B-36 Peacemaker" class="lazy-img" /> 
-      </button>
+<div class="video-wrapper">
+    <iframe
+      id="ytplayer"
+      src="https://www.youtube.com/embed/AQCrm4noaDI?enablejsapi=1"
+      title="F2A Buffalo"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
   </div>
   
-  <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-      <div class="airplane-title" data-title="🤯 Mini-747?"></div>
-       <button onclick="openPopup('images/DV-ATL-98-1.png')">
-            <img data-src="images/SV-ATL-98.png" alt="ATL-98 Carvair" class="lazy-img"/> 
-       </button>
-  </div>
 
-  <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-      <div class="airplane-title" data-title="😱 Airborne Aircraft Carrier?"></div>
-      <button onclick="openPopup('images/DV-1201-1.png')">
-            <img data-src="images/SV-1201.png" alt="Lockheed Cl-1201" class="lazy-img"/> 
-      </button>
-  </div>
-
-  <div class="airplane-btn"> <!-- ✅ make this a div, not a button -->
-      <div class="airplane-title" data-title="😲 Spinning Wing?"></div>
-      <button onclick="openPopup('images/DV-AD-1.png')">
-            <img data-src="images/SV-AD-1.png" alt="NASA AD-1" class="lazy-img"/> 
-      </button>
-  </div>
-
-   
-
-  
-
-  
+<!-- Load YouTube API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
 
 
 
 
-
-
-
-</div>
-
-
-  
-  
-<div id="imageModal" class="modal" onclick="closePopup()">
-    <span class="close-btn">&times;</span>
-    <img class="modal-content" id="popupImg" src="" alt="Popup Image" />
-    <button class="arrow left-arrow" onclick="event.stopPropagation(); changeImage(-1)">&#10094;</button>
-    <button class="arrow right-arrow" onclick="event.stopPropagation(); changeImage(1)">&#10095;</button>
-</div>
 
 <script src="script.js"></script>
 <footer style="text-align: center; margin-top: 40px; font-size: 14px; color: #666;">
