@@ -1,326 +1,349 @@
-
 .airplane-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
-  gap: 15px;
-  margin-top: 20px;
-  justify-items: center; /* centers each card inside the cell */
-}
-
-
-.airplane-btn {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 10px;
-  display: inline-block;
-}
-
- .airplane-btn img {
-  width: 100%; /* take full width of button */
-  max-width: 300px; /* increase image size */
-  border-radius: 8px;
-  transition: transform 0.2s;
-}
-.starter-hint {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(90deg, #ff4081, #ff9800);
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 12px;
-  text-align: center;
-  display: inline-block;
-  box-shadow: 0 0 20px rgba(255, 105, 135, 0.9);
-  animation: starterPop 1.2s ease-in-out infinite, floatHint 2s ease-in-out infinite;
-}
-@keyframes starterPop {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.12); }
-  100% { transform: scale(1); }
-}
-
-@keyframes floatHint {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-
-.airplane-btn img:hover {
-    transform: scale(1.05);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
+    gap: 15px;
+    margin-top: 20px;
+    justify-items: center; /* centers each card inside the cell */
   }
   
-  /* Modal Style */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
   
-  .modal-content {
-    margin: 9% auto;
-    display: block;
-    width: 100%;
-    max-width: 900px;
-    border-radius: 10px;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    font-size: 30px;
-    color: white;
+  .airplane-btn {
+    border: none;
+    background: none;
     cursor: pointer;
+    padding: 10px;
+    display: inline-block;
   }
-
+  
+   .airplane-btn img {
+    width: 100%; /* take full width of button */
+    max-width: 300px; /* increase image size */
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  .starter-hint {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #ff4081, #ff9800);
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(255, 105, 135, 0.9);
+    animation: starterPop 1.2s ease-in-out infinite, floatHint 2s ease-in-out infinite;
+  }
+  @keyframes starterPop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.12); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes floatHint {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  
+  .airplane-btn img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Modal Style */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal-content {
+      margin: 9% auto;
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      border-radius: 10px;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+  
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    
+  
+    h2 {
+      text-align: left;
+      display: block;
+      margin: 0 auto 20px 0;
+    }
+    
+    
+    #searchInput {
+      display: inline-block;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 400px;
+      vertical-align: middle;
+    }
+    
+    #createbutton {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      background-color: #4285f4;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+    
+    #createbutton:hover {
+      background-color: #3367d6;
+    }
+    
+    /* Align all header elements in center of page */
+    
+  #searchInput {
+      margin-top: -94.7px; /* Push search bar down */
+      text-align: center;
+    }
+  #createbutton {
+      margin-top: -94.7px; /* Push search bar down */
+      text-align: center;
+    }
   
   body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    padding: 20px;
+      text-align: center;
+    }
+  
+  
+  .logo {
+      height: 40px; /* Adjust size as needed */
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  
+  #timerDisplay {
+    display: none;
   }
   
-
-  h2 {
-    text-align: left;
-    display: block;
-    margin: 0 auto 20px 0;
+  .intro {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #222;
   }
   
-  
-  #searchInput {
-    display: inline-block;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 400px;
-    vertical-align: middle;
-  }
-  
-  #createbutton {
-    display: inline-block;
-    margin-left: 10px;
+  #linkbutton {
+    position: absolute;
+    top: 24px;           /* Adjust this until it aligns with the search bar */
+    right: 30px;
     padding: 10px 15px;
     font-size: 16px;
-    border: none;
-    background-color: #4285f4;
+    background-color: #f57c00;
     color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #linkbutton:hover {
+    background-color: #e65100;
+  }
+  body {
+    position: relative;
+  }
+  .airplane-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .airplane-btn button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .credit-line {
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.7);
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 50%;
+  }
+  
+  .left-arrow {
+    left: 20px;
+  }
+  
+  .right-arrow {
+    right: 20px;
+  }
+  
+  .arrow:hover {
+    background-color: rgba(255,255,255,0.9);
+  }
+  
+  
+  @media (max-width: 600px) {
+    .airplane-container {
+      grid-template-columns: 1fr; /* ✅ Mobile: 1 card per row */
+      justify-content: center;
+    }
+  
+    .airplane-btn img {
+      width: 100%;
+      max-width: 100vw; /* ✅ full width image, nice padding */
+    }
+  
+    #searchInput,
+    #createbutton {
+      width: 90%;
+      margin: 10px auto;
+    }
+  
+    h2 {
+      font-size: 1.2em;
+    }
+  
+    .logo {
+      height: 30px;
+    }
+  }
+  
+  
+  
+  
+  .airplane-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #1a73e8;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .airplane-title:hover {
+    text-decoration: underline;
+  }
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .popup-box {
+    background: white;
+    padding: 25px;
+    max-width: 400px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .popup-buttons button {
+    margin: 10px 5px 0 5px;
+    padding: 10px 15px;
+    border: none;
     border-radius: 6px;
     cursor: pointer;
-    vertical-align: middle;
+    font-size: 14px;
   }
   
-  #createbutton:hover {
-    background-color: #3367d6;
+  #popupAddBtn {
+    background-color: #4285f4;
+    color: white;
   }
   
-  /* Align all header elements in center of page */
+  #popupCloseBtn {
+    background-color: #ccc;
+  }
+  @keyframes pop {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+  }
   
-#searchInput {
-    margin-top: -94.7px; /* Push search bar down */
+  .animate-first {
+    animation: pop 1s ease-in-out 0.5s 3;
+  }
+  
+  .starter-hint {
+    font-size: 16px;
+    color: #4285f4;
+    margin-top: 8px;
+    font-weight: bold;
     text-align: center;
   }
-#createbutton {
-    margin-top: -94.7px; /* Push search bar down */
-    text-align: center;
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
   }
-
-body {
-    text-align: center;
-  }
-
-
-.logo {
-    height: 40px; /* Adjust size as needed */
-    vertical-align: middle;
-    margin-right: 10px;
-  }
-
-#timerDisplay {
-  display: none;
-}
-
-.intro {
-  margin-top: 40px;
-  font-size: 18px;
-  color: #222;
-}
-
-#linkbutton {
-  position: absolute;
-  top: 24px;           /* Adjust this until it aligns with the search bar */
-  right: 30px;
-  padding: 10px 15px;
-  font-size: 16px;
-  background-color: #f57c00;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  cursor: pointer;
-}
-#linkbutton:hover {
-  background-color: #e65100;
-}
-body {
-  position: relative;
-}
-.airplane-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-}
-
-.airplane-btn button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.credit-line {
-  font-size: 12px;
-  color: #555;
-  margin-top: 4px;
-}
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255,255,255,0.7);
-  border: none;
-  padding: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1000;
-  border-radius: 50%;
-}
-
-.left-arrow {
-  left: 20px;
-}
-
-.right-arrow {
-  right: 20px;
-}
-
-.arrow:hover {
-  background-color: rgba(255,255,255,0.9);
-}
-
-
-@media (max-width: 600px) {
-  .airplane-container {
-    grid-template-columns: 1fr; /* ✅ Mobile: 1 card per row */
-    justify-content: center;
-  }
-
-  .airplane-btn img {
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 100vw; /* ✅ full width image, nice padding */
+    height: 100%;
   }
-
-  #searchInput,
-  #createbutton {
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  h2 {
-    font-size: 1.2em;
-  }
-
-  .logo {
-    height: 30px;
-  }
-}
-
-
-
-
-.airplane-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #1a73e8;
-  padding: 4px 8px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-bottom: 5px;
-  text-align: center;
-}
-.airplane-title:hover {
-  text-decoration: underline;
-}
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.popup-box {
-  background: white;
-  padding: 25px;
-  max-width: 400px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.popup-buttons button {
-  margin: 10px 5px 0 5px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-#popupAddBtn {
-  background-color: #4285f4;
-  color: white;
-}
-
-#popupCloseBtn {
-  background-color: #ccc;
-}
-@keyframes pop {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(1); }
-}
-
-.animate-first {
-  animation: pop 1s ease-in-out 0.5s 3;
-}
-
-.starter-hint {
-  font-size: 16px;
-  color: #4285f4;
-  margin-top: 8px;
-  font-weight: bold;
-  text-align: center;
-}
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
 
 
 
